@@ -13,8 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('repository', function (Blueprint $table) {
+        Schema::create('repositories', function (Blueprint $table) {
             $table->id();
+            $table->string('projectName');
+            $table->string('URL');
+            $table->timestamp('repositoryCreatedAt');
+            $table->timestamp('repositoryLastPush');
+            $table->string('description', 2056);
+            $table->bigInteger('stars');
             $table->timestamps();
         });
     }
