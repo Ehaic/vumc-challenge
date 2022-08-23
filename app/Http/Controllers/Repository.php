@@ -12,8 +12,17 @@ class Repository extends Controller
         return view('index')->with('repositories', $repositories);
     }
 
+    public function getRepoDetails($id): array {
+        $repository = \App\Models\Repository::find($id);
+        $success = !is_null($repository);
+       return [
+           'success' => $success,
+           $repository
+       ];
+    }
+
     //Update the repositories in the database from the GitHub API Gets top 100 starred Repositories.
-    public function updateRepositories() {
+    public function updateRepositories(): string {
         $githubApi = Http::get('https://api.github.com/search/repositories',
         [
             'q' => 'language:php', //Repositories with PHP language tag
@@ -40,4 +49,6 @@ class Repository extends Controller
         }
         return "DONE";
     }
+
+
 }
