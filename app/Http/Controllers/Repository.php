@@ -27,6 +27,8 @@ class Repository extends Controller
     //Update the repositories in the database from the GitHub API Gets top 100 starred Repositories.
     public function updateRepositories() {
         //Search API Repositories endpoint.
+        //If I was doing more than this single search I'd write a class for building github api calls
+        // or just use a composer package
         $githubApi = Http::get('https://api.github.com/search/repositories',
         [
             'q' => 'language:php', //PHP language tag
