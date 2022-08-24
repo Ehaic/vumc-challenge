@@ -2,7 +2,7 @@ Getting this project running
 
 you will need atleast php 8.0 to get this project running.
 
-if you're using WSL(2) on windows (or linux) you can use the laravel sail utility to get the project running.
+if you're using WSL(2) on windows (or linux) you can use the [laravel sail utility](https://laravel.com/docs/9.x/sail) to get the project running.
 
 ```bash
 cp .env.example .env
